@@ -7,12 +7,12 @@ class WebCrawlerTest {
 
     @Test
     public void getPageLinks() throws IOException {
-        assertEquals(webCrawler.crawl("https://forbes.com", 3).get(1),"https://www.forbes.com/  ");
+        assertEquals(webCrawler.crawl("https://forbes.com", 3).get(1),"https://www.forbes.com/");
     }
 
     @Test
     public void getPageHeadings() throws IOException {
-        assertEquals(webCrawler.getHeading("https://forbes.com","h3")[1],"Breaking");
+        assertEquals(webCrawler.getHeading("https://forbes.com","h3")[1],"###  Breaking 1.1.2");
     }
 
 }
