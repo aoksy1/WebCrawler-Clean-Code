@@ -4,32 +4,32 @@ import java.io.IOException;
 import java.util.Locale;
 
 public class Translator {
-    public String[] translate(String[] textToTranslate, String sourceLanguage, String targetLanguage) throws IOException {
-        String[] translated = new String[textToTranslate.length];
+
+    public String translate(String textToTranslate, String sourceLanguage, String targetLanguage) throws IOException {
+        String translated = "";
         Runtime runtime = Runtime.getRuntime();
+
         sourceLanguage=getShortLanguage(sourceLanguage);
         targetLanguage=getShortLanguage(targetLanguage);
-        for(int i=0;i<textToTranslate.length;i++){
-            Process translate = runtime.exec("curl https://api-free.deepl.com/v2/translate \n "
-                    +"-d auth_key=bf134191-82e9-a5b1-7cca-e4508c535581:fx -d \"text="+textToTranslate[i]+"\" \n"
+
+        Process translate = runtime.exec("curl https://api-free.deepl.com/v2/translate \n "
+                    +"-d auth_key=bf134191-82e9-a5b1-7cca-e4508c535581:fx -d \"text="+textToTranslate+"\" \n"
                     +"\"-d source_lang"+sourceLanguage+"\" -d \"target_lang="+targetLanguage+"\"");
-            translated[i] = IOUtils.toString(translate.getInputStream());
-            translated[i] = translated[i].substring(58,translated[i].length()-4);
-            System.out.println(translated[i]);
-        }
+        translated = IOUtils.toString(translate.getInputStream());
+        translated = translated.substring(58,translated.length()-4);
+
         return translated;
     }
+
     public String getShortLanguage(String language){
-        String shortLanguage = "";
+        String shortcutLanguage = "";
         language=language.toLowerCase(Locale.ROOT);
-        switch (language){
-            case "english":
-                shortLanguage="EN";
-                break;
-            case "german":
-                shortLanguage="DE";
-                break;
+
+        switch (language) {
+            case "english" -> shortcutLanguage = "EN";
+            case "german" -> shortcutLanguage = "DE";
         }
-        return shortLanguage;
+
+        return shortcutLanguage;
     }
 }
