@@ -10,7 +10,7 @@ public class Driver {
 
         WebCrawler webCrawler = new WebCrawler();
 
-        webCrawler.crawl("https://forbes.com",3);
+        webCrawler.crawl("https://developer.android.com/studio/intro",3);
         //webCrawler.getHeading("https://forbes.com","h3");
 
         /*LinkedList<String> list = new LinkedList<String>();

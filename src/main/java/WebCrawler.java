@@ -30,15 +30,14 @@ public class WebCrawler {
 
         if(!urlLinks.contains(pageUrl) && depth<crawlDepth){
             foundUrl.add(pageUrl);
-            System.out.println(foundUrl.get(i));
-            getHeading(foundUrl.get(i),"h1");
-            getHeading(foundUrl.get(i),"h2");
-            getHeading(foundUrl.get(i),"h3");
-            getHeading(foundUrl.get(i),"h4");
-            getHeading(foundUrl.get(i),"h5");
-            getHeading(foundUrl.get(i),"h6");
+            if(i>0)foundHeadings.add("\n<br>"+arrowBuilder(depth)+" link to <a>" + foundUrl.get(i) + " </a>\n");
+            for (String heading : Arrays.asList("h1", "h2", "h3", "h4", "h5", "h6")) {
+                getHeading(foundUrl.get(i), heading);
+            }
             urlLinks.add(pageUrl);
             depth++; i++;
+
+            outputWriter();
 
             for (Element link : availableLinksOnPage){
                 if(depth<crawlDepth)
@@ -49,42 +48,50 @@ public class WebCrawler {
         return foundUrl;
     }
 
-    public String[] getHeading(String url, String requestedHeading) throws IOException {
+    public LinkedList<String> getHeading(String url, String requestedHeading) throws IOException {
         Document htmlFile = Jsoup.connect(url).get();
         Elements headingsOnPage = htmlFile.select(requestedHeading);
-        String[] headingOutput = new String[headingsOnPage.size()];
 
-        int i = 0, numberOfHeading1 = 1, numberOfHeading2 = 1, numberOfHeading3 = 1, numberOfHeading4 = 1, numberOfHeading5 = 1, numberOfHeading6 = 1;
+        int numberOfHeading1 = 1, numberOfHeading2 = 1, numberOfHeading3 = 1, numberOfHeading4 = 1, numberOfHeading5 = 1, numberOfHeading6 = 1;
 
         for (Element heading : headingsOnPage){
             switch (requestedHeading) {
-                case "h1" -> headingOutput[i] = "# " + "-->" + " " + translator.translate(heading.text(),sourceLanguage,targetLanguage) + " " + numberOfHeading1++;
-                case "h2" -> headingOutput[i] = "## " + "-->" + " " + translator.translate(heading.text(),sourceLanguage,targetLanguage) + " " + numberOfHeading1 + "." + numberOfHeading2++;
-                case "h3" -> headingOutput[i] = "### " + "-->" + " " + translator.translate(heading.text(),sourceLanguage,targetLanguage) + " " + numberOfHeading1 + "." + numberOfHeading2 + "." + numberOfHeading3++;
-                case "h4" -> headingOutput[i] = "#### " + "-->" + " " + translator.translate(heading.text(),sourceLanguage,targetLanguage) + " " + numberOfHeading1 + "." + numberOfHeading2 + "." + numberOfHeading3 + "." + numberOfHeading4++;
-                case "h5" -> headingOutput[i] = "##### " + "-->" + " " + translator.translate(heading.text(),sourceLanguage,targetLanguage) + " " + numberOfHeading1 + "." + numberOfHeading2 + "." + numberOfHeading3 + "." + numberOfHeading4 + "." + numberOfHeading5++;
-                case "h6" -> headingOutput[i] = "###### " + "-->" + " " + translator.translate(heading.text(),sourceLanguage,targetLanguage) + " " + numberOfHeading1 + "." + numberOfHeading2 + "." + numberOfHeading3 + "." + numberOfHeading4 + "." + numberOfHeading5 + "." + numberOfHeading6++;
+                case "h1" -> foundHeadings.add("# "+ headingBuilder(heading) + numberOfHeading1++);
+                case "h2" -> foundHeadings.add("## " + headingBuilder(heading) + numberOfHeading1 + "." + numberOfHeading2++);
+                case "h3" -> foundHeadings.add("### " + headingBuilder(heading) + numberOfHeading1 + "." + numberOfHeading2 + "." + numberOfHeading3++);
+                case "h4" -> foundHeadings.add("#### " + headingBuilder(heading) + numberOfHeading1 + "." + numberOfHeading2 + "." + numberOfHeading3 + "." + numberOfHeading4++);
+                case "h5" -> foundHeadings.add("##### " + headingBuilder(heading) + numberOfHeading1 + "." + numberOfHeading2 + "." + numberOfHeading3 + "." + numberOfHeading4 + "." + numberOfHeading5++);
+                case "h6" -> foundHeadings.add("###### " + headingBuilder(heading) + numberOfHeading1 + "." + numberOfHeading2 + "." + numberOfHeading3 + "." + numberOfHeading4 + "." + numberOfHeading5 + "." + numberOfHeading6++);
             }
-            i++;
         }
-        BufferedWriter writer = new BufferedWriter(new FileWriter("src/output/output.md"));
-        for(String heading:headingOutput){
-            writer.write(heading);
-        }
-        writer.write(Arrays.toString(headingOutput));
-        writer.close();
-        return headingOutput;
+        return foundHeadings;
     }
 
-    public String sentenceBuilder(String heading, int depthOfCrawl, String requestedHeading){
-        StringBuilder stringBuffer = new StringBuilder();
-        String arrow = "";
-        if(depth==1) arrow=">";
-        for(int i=0;i<2;i++){
-            stringBuffer.append("-");
-            stringBuffer.append(arrow);
-            arrow=stringBuffer.toString();
+    private String headingBuilder(Element headingElement) throws IOException {
+        return arrowBuilder(depth) + " " + translator.translate(headingElement.text(),sourceLanguage,targetLanguage) + " ";
+    }
+
+    private void outputWriter() throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("src/output/output.md"));
+
+        writer.write("input: <a>" + foundUrl.get(0) + " </a>\n");
+        writer.write("<br>depth: " + depth + "\n");
+        writer.write("<br>source language: " + sourceLanguage + "\n");
+        writer.write("<br>target language: " + targetLanguage + "\n");
+        writer.write("<br>summary: " + "\n");
+        for (String heading : foundHeadings) {
+            writer.write(heading+"\n");
         }
+        writer.close();
+    }
+
+    private String arrow = "";
+    private String arrowBuilder(int crawlDepth){
+        StringBuilder stringBuffer = new StringBuilder();
+        if(crawlDepth>0)arrow=">";
+        stringBuffer.append("--".repeat(Math.max(0, crawlDepth)));
+        stringBuffer.append(arrow);
+        arrow=stringBuffer.toString();
         return arrow;
     }
 }

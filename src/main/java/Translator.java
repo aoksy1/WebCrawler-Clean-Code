@@ -6,7 +6,6 @@ import java.util.Locale;
 public class Translator {
 
     public String translate(String textToTranslate, String sourceLanguage, String targetLanguage) throws IOException {
-        String translated = "";
         Runtime runtime = Runtime.getRuntime();
 
         sourceLanguage=getShortLanguage(sourceLanguage);
@@ -15,7 +14,7 @@ public class Translator {
         Process translate = runtime.exec("curl https://api-free.deepl.com/v2/translate \n "
                     +"-d auth_key=bf134191-82e9-a5b1-7cca-e4508c535581:fx -d \"text="+textToTranslate+"\" \n"
                     +"\"-d source_lang"+sourceLanguage+"\" -d \"target_lang="+targetLanguage+"\"");
-        translated = IOUtils.toString(translate.getInputStream());
+        String translated = IOUtils.toString(translate.getInputStream());
         translated = translated.substring(58,translated.length()-4);
 
         return translated;
