@@ -11,3 +11,5 @@ v3 --> We added translator class to the project! It takes input array String and
 We created a method to convert given input for an example "english" to "EN" because our DeepL API requires this specific input to translate the sentences!
 
 We tested all of our methods and got 100% from class and methods, but from lines only 90%!
+
+[![Java CI with Maven](https://github.com/aoksy1/WebCrawler-Clean-Code/actions/workflows/maven.yml/badge.svg)](https://github.com/aoksy1/WebCrawler-Clean-Code/actions/workflows/maven.yml)
