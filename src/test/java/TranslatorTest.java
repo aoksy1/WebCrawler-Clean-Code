@@ -5,10 +5,10 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TranslatorTest {
-    Translator translator = new Translator();
 
     @Test
     public void getTextTranslated() throws IOException {
+        Translator translator = new Translator();
         String testValue1 = "Hello World!";
         String testValue2 = "Das ist ein Test!";
 
@@ -18,6 +18,7 @@ class TranslatorTest {
 
     @Test
     public void getLanguage(){
+        Translator translator = new Translator();
         String sampleInputLanguage = "english";
 
         assertEquals(translator.getShortLanguage(sampleInputLanguage),"EN");
