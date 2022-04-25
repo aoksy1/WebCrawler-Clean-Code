@@ -34,11 +34,12 @@ v11 --> Fine tuning and all bugs are fixed! Now we can test our program and get 
 
 [![Java CI with Maven](https://github.com/aoksy1/WebCrawler-Clean-Code/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/aoksy1/WebCrawler-Clean-Code/actions/workflows/maven.yml)
 
-Testing the build can be done directly through GitHub, by running the Build with Maven workflow. Running the workflow also assures that there are no failing Unit tests in the project.
-Running the project should be done through an IDE after downloading the zip file from GitHub. User should run the Driver class where the main method is, and follow the instructions in the console to succesfuly use the crawler and the translator.
-     Step 1 should be entering the website URL and it should be in the following format "www.sample-website.com"
-     Step 2 is choosing the desired depth to crawl to
-     Step 3 and Step 4 are entering the source and target language and they should be written as i.e. "english" ; "german" etc.
-     To view the translations please open the output.md file in src/output path
+-Testing the build can be done directly through GitHub, by running the Build with Maven workflow. Running the workflow also assures that there are no failing Unit tests in the project.
 
-You can test the project by running the Test classes that are in the "tests/java" directory, or by checking the workflow run in the GitHub actions, under the "Build with Maven" job.
+-Running the project should be done through an IDE after downloading the zip file from GitHub. User should run the Driver class where the main method is, and follow the instructions in the console to succesfuly use the crawler and the translator.
+     -Step 1 should be entering the website URL and it should be in the following format "www.sample-website.com"
+     -Step 2 is choosing the desired depth to crawl to
+     -Step 3 and Step 4 are entering the source and target language and they should be written as i.e. "english" ; "german" etc.
+      To view the translations please open the output.md file in src/output path
+
+-You can test the project by running the Test classes that are in the "tests/java" directory, or by checking the workflow run in the GitHub actions, under the "Build    with Maven" job.
