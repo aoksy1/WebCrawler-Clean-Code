@@ -14,9 +14,13 @@ We tested all of our methods and got 100% from class and methods, but from lines
 
 v4 -->
 
-v5 -->
+v5 --> Connected all classes successfully and got the program to save output.md file with all of our headings and links!
 
-v6 -->
+Created arrow builder method that creates an arrow specific for each depth of crawl!
+
+Created headingBulder method that creates a given form of heading!
+
+v6 --> Created Input Class that creates input object! Now user can write the website, depth, source language and target language.
 
 v7 -->
 
