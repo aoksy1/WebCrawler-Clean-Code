@@ -16,7 +16,7 @@ public class Driver {
         input.setSourceLanguage(scanner.next());
         input.setTargetLanguage(scanner.next());
 
-        WebCrawler webCrawler = new WebCrawler(input);
+        WebCrawler webCrawler = new WebCrawler(input.getSourceLanguage(), input.getTargetLanguage());
         webCrawler.crawl(input.getWebsite(),input.getDepth());
     }
 }

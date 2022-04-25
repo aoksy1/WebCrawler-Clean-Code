@@ -1,8 +1,11 @@
-input: <a>http://www.forbes.com </a>
+input: <a>https://forbes.com </a>
 <br>depth: 3
 <br>source language: english
 <br>target language: german
 <br>summary: 
+###  BREAKING 1.1.1
+###  Breaking 1.1.2
+###  Trockene Wettervorhersage sorgt für höhere Lebensmittelpreise und Milliardenverluste in der Landwirtschaft 1.1.3
 ##  Marktexperten sagten voraus, dass eine Niederlage von Macrons rechtsextremer Herausforderin Marine Le Pen in der Stichwahl in Frankreich eine ähnliche Marktreaktion wie beim Brexit ausgelöst hätte. 1.1
 ##  FORBES 1.2
 ##   1.3
@@ -57,13 +60,13 @@ input: <a>http://www.forbes.com </a>
 ## ----> Die Liste der Milliardäre der Welt 2021 1.7
 ## ----> Ein Jahrzehnt der Milliardäre 1.8
 ## ----> Mehr von Billionaires 1.9
-### ----> NBA China CEO unter acht neuen Mitgliedern der chinesisch-amerikanischen Elitegruppe 1.1.1
-### ----> Indiens Gautam Adani überholt Warren Buffett und wird 5. reichster Mensch der Welt 1.1.2
-### ----> Diese Länder haben ihre allerersten Milliardäre 1.1.3
-### ----> Die Städte mit den meisten Milliardären 2022 1.1.4
-### ----> Apple-Zulieferer Foxconn drängt mit M weiter in die Elektrofahrzeuge 1.1.5
-### ----> Kevin McCarthy fand Trumps Hotels nur während Trumps Präsidentschaft wettbewerbsfähig 1.1.6
-### ----> Schecks 1.1.7
-### ----> Japanischer Milliardär, Gründer des Motorenherstellers Nidec, kehrt als CEO zurück, während der Aktienkurs einbricht 1.1.8
-### ----> China-Aktien fallen erneut; Pandemie schürt Wachstumssorgen, dünnt die Reihen der Milliardäre aus 1.1.9
-### ----> Serena Williams und Lewis Hamilton wollen Chelsea vom russischen Milliardär Abramowitsch kaufen, so ein Bericht 1.1.10
+### ----> Milliardär Mukesh Ambanis Reliance zieht 3,2-Milliarden-Dollar-Übernahmeangebot für Indiens Future Retail zurück 1.1.1
+### ----> NBA China CEO unter acht neuen Mitgliedern der chinesisch-amerikanischen Elitegruppe 1.1.2
+### ----> Indiens Gautam Adani überholt Warren Buffett und wird 5. reichster Mensch der Welt 1.1.3
+### ----> Diese Länder haben ihre allerersten Milliardäre 1.1.4
+### ----> Die Städte mit den meisten Milliardären 2022 1.1.5
+### ----> Apple-Zulieferer Foxconn drängt mit M weiter in die Elektrofahrzeuge 1.1.6
+### ----> Kevin McCarthy fand Trumps Hotels nur während Trumps Präsidentschaft wettbewerbsfähig 1.1.7
+### ----> Schecks 1.1.8
+### ----> Japanischer Milliardär, Gründer des Motorenherstellers Nidec, kehrt als CEO zurück, während der Aktienkurs einbricht 1.1.9
+### ----> China-Aktien fallen erneut; Pandemie schürt Wachstumssorgen, dünnt die Reihen der Milliardäre aus 1.1.10

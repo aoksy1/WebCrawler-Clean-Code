@@ -5,15 +5,7 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class WebCrawlerTest {
-    Input input = new Input();
-
-    @Before
-            public void setUp(){
-        input.setSourceLanguage("english");
-        input.setTargetLanguage("german");
-    }
-
-    WebCrawler webCrawler = new WebCrawler(input);
+    WebCrawler webCrawler = new WebCrawler("english","german");
 
     @Test
     public void getPageLinks() throws IOException {

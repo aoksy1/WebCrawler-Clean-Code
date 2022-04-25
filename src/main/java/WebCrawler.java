@@ -13,10 +13,10 @@ public class WebCrawler {
     private final String sourceLanguage;
     private final String targetLanguage;
 
-    public WebCrawler(Input input){
+    public WebCrawler(String inputSourceLanguage, String inputTargetLanguage){
         urlLinks = new HashSet<>();
-        sourceLanguage = input.getSourceLanguage();
-        targetLanguage = input.getTargetLanguage();
+        sourceLanguage = inputSourceLanguage;
+        targetLanguage = inputTargetLanguage;
     }
 
     private int depth = 0, i = 0;
