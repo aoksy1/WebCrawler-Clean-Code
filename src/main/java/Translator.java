@@ -15,7 +15,7 @@ public class Translator {
                     +"-d auth_key=bf134191-82e9-a5b1-7cca-e4508c535581:fx -d \"text="+textToTranslate+"\" \n"
                     +"\"-d source_lang"+sourceLanguage+"\" -d \"target_lang="+targetLanguage+"\"");
         String translated = IOUtils.toString(translate.getInputStream());
-        if(translated.length()>0)translated = translated.substring(58,translated.length()-4);
+        if(translated.length()>45)translated = translated.substring(58,translated.length()-4);
 
         return translated;
     }
