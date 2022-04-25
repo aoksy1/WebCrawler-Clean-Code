@@ -2,7 +2,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
 import java.io.*;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -11,17 +10,13 @@ import java.util.LinkedList;
 public class WebCrawler {
 
     private final HashSet<String> urlLinks;
-    private String sourceLanguage;
-    private String targetLanguage;
-    private String website;
-    private int givenDepth;
+    private final String sourceLanguage;
+    private final String targetLanguage;
 
     public WebCrawler(Input input){
         urlLinks = new HashSet<>();
         sourceLanguage = input.getSourceLanguage();
         targetLanguage = input.getTargetLanguage();
-        website = input.getWebsite();
-        givenDepth = input.getDepth();
     }
 
     private int depth = 0, i = 0;

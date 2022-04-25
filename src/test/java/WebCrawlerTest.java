@@ -1,9 +1,18 @@
+import org.junit.Before;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class WebCrawlerTest {
+public class WebCrawlerTest {
     Input input = new Input();
+
+    @Before
+            public void setUp(){
+        input.setSourceLanguage("english");
+        input.setTargetLanguage("german");
+    }
+
     WebCrawler webCrawler = new WebCrawler(input);
 
     @Test
