@@ -9,10 +9,11 @@ class TranslatorTest {
 
     @Test
     public void getTextTranslated() throws IOException {
-        String[] testValues = {"Hello World!", "Das ist ein Test!"};
+        String testValue1 = "Hello World!";
+        String testValue2 = "Das ist ein Test!";
 
-        assertEquals(translator.translate(testValues,"english","german")[0],"Hallo Welt!");
-        assertEquals(translator.translate(testValues,"german","english")[1],"This is a test!");
+        assertEquals(translator.translate(testValue1,"english","german"),"Hallo Welt!");
+        assertEquals(translator.translate(testValue2,"german","english"),"This is a test!");
     }
 
     @Test
