@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class InputTest {/*
+public class InputTest {
     Input input = new Input();
     String website = "aau.at";
     String sourceLanguage = "english";
@@ -37,5 +37,5 @@ public class InputTest {/*
         input.setTargetLanguage(targetLanguage);
 
         assertEquals(input.getTargetLanguage(),targetLanguage);
-    }*/
+    }
 }
