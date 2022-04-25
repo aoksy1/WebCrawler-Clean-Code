@@ -28,13 +28,13 @@ v8 --> Final version with 100% of methods tested and some bug fixes.
 
 v9 --> Trying to automate JUnit tests.
 
-v10 --> Bug fixes.
+v10 --> Bug fixes. Added Spitfire plugin to pom.xml and managed to run unit test in GitHub
 
-v11 --> Fine tuning and all bugs are fixed! Now we can test our program and get all headings from www.forbes.com on button click on Github.
+v11 --> Fine tuning and all bugs are fixed! 
 
 [![Java CI with Maven](https://github.com/aoksy1/WebCrawler-Clean-Code/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/aoksy1/WebCrawler-Clean-Code/actions/workflows/maven.yml)
 
--Testing the build can be done directly through GitHub, by running the Build with Maven workflow. Running the workflow also assures that there are no failing Unit tests in the project.
+-Testing the build can be done directly through GitHub, by starting the Build with Maven workflow. Running the workflow also assures that there are no failing Unit tests in the project.
 
 -Running the project should be done through an IDE after downloading the zip file from GitHub. User should run the Driver class where the main method is, and follow the instructions in the console to succesfuly use the crawler and the translator.
     
