@@ -3,7 +3,6 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class WebCrawlerTest {
-/*
     @Test
     public void getPageLinks() throws IOException {
         WebCrawler webCrawler = new WebCrawler("english","german");
@@ -15,5 +14,4 @@ public class WebCrawlerTest {
         WebCrawler webCrawler = new WebCrawler("english","german");
         assertEquals(webCrawler.getHeading("https://forbes.com","h3").get(0),"###  BREAKING 1.1.1");
     }
-*/
 }
