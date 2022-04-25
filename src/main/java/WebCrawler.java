@@ -2,7 +2,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
 import java.io.*;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -11,18 +10,19 @@ import java.util.LinkedList;
 public class WebCrawler {
 
     private final HashSet<String> urlLinks;
-    private String sourceLanguage = "english";
-    private String targetLanguage = "german";
+    private final String sourceLanguage;
+    private final String targetLanguage;
 
-    public WebCrawler(){
+    public WebCrawler(String inputSourceLanguage, String inputTargetLanguage){
         urlLinks = new HashSet<>();
+        sourceLanguage = inputSourceLanguage;
+        targetLanguage = inputTargetLanguage;
     }
 
     private int depth = 0, i = 0;
     LinkedList<String> foundUrl = new LinkedList<>();
     LinkedList<String> foundHeadings = new LinkedList<>();
     Translator translator = new Translator();
-
 
     public LinkedList<String> crawl(String pageUrl, int crawlDepth) throws IOException {
         Document htmlFile = Jsoup.connect(pageUrl).get();
@@ -95,5 +95,7 @@ public class WebCrawler {
         return arrow;
     }
 }
+
+
 
 //TODO --> Fix output lines so that at crawl depth 2 output is like # ----> Something 1.1.1

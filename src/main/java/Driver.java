@@ -4,23 +4,19 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Driver {
     public static void main(String[] args) throws IOException {
+        Input input = new Input();
+        Scanner scanner = new Scanner(System.in);
 
-        WebCrawler webCrawler = new WebCrawler();
+        input.setWebsite(scanner.next());
+        input.setDepth(scanner.nextInt());
+        input.setSourceLanguage(scanner.next());
+        input.setTargetLanguage(scanner.next());
 
-        webCrawler.crawl("https://developer.android.com/studio/intro",3);
-        //webCrawler.getHeading("https://forbes.com","h3");
-
-        /*LinkedList<String> list = new LinkedList<String>();
-        list=webCrawler.crawl("https://forbes.com",3);
-
-        for(String list1:list){
-            System.out.println(list1);
-        }*/
-
-
-
+        WebCrawler webCrawler = new WebCrawler(input.getSourceLanguage(), input.getTargetLanguage());
+        webCrawler.crawl(input.getWebsite(),input.getDepth());
     }
 }
