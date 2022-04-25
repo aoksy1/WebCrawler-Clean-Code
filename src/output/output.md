@@ -3,9 +3,6 @@ input: <a>https://forbes.com </a>
 <br>source language: english
 <br>target language: german
 <br>summary: 
-###  BREAKING 1.1.1
-###  Breaking 1.1.2
-###  Trockene Wettervorhersage sorgt für höhere Lebensmittelpreise und Milliardenverluste in der Landwirtschaft 1.1.3
 ##  Marktexperten sagten voraus, dass eine Niederlage von Macrons rechtsextremer Herausforderin Marine Le Pen in der Stichwahl in Frankreich eine ähnliche Marktreaktion wie beim Brexit ausgelöst hätte. 1.1
 ##  FORBES 1.2
 ##   1.3
