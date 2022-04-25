@@ -3,7 +3,8 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class WebCrawlerTest {
-    WebCrawler webCrawler = new WebCrawler();
+    Input input = new Input();
+    WebCrawler webCrawler = new WebCrawler(input);
 
     @Test
     public void getPageLinks() throws IOException {

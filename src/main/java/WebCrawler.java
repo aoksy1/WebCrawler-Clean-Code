@@ -11,18 +11,23 @@ import java.util.LinkedList;
 public class WebCrawler {
 
     private final HashSet<String> urlLinks;
-    private String sourceLanguage = "english";
-    private String targetLanguage = "german";
+    private String sourceLanguage;
+    private String targetLanguage;
+    private String website;
+    private int givenDepth;
 
-    public WebCrawler(){
+    public WebCrawler(Input input){
         urlLinks = new HashSet<>();
+        sourceLanguage = input.getSourceLanguage();
+        targetLanguage = input.getTargetLanguage();
+        website = input.getWebsite();
+        givenDepth = input.getDepth();
     }
 
     private int depth = 0, i = 0;
     LinkedList<String> foundUrl = new LinkedList<>();
     LinkedList<String> foundHeadings = new LinkedList<>();
     Translator translator = new Translator();
-
 
     public LinkedList<String> crawl(String pageUrl, int crawlDepth) throws IOException {
         Document htmlFile = Jsoup.connect(pageUrl).get();
@@ -95,5 +100,7 @@ public class WebCrawler {
         return arrow;
     }
 }
+
+
 
 //TODO --> Fix output lines so that at crawl depth 2 output is like # ----> Something 1.1.1
