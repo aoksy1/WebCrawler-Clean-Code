@@ -27,6 +27,28 @@ public class Translator {
         switch (language) {
             case "english" -> shortcutLanguage = "EN";
             case "german" -> shortcutLanguage = "DE";
+            case "french" -> shortcutLanguage = "FR";
+            case "bulgarian" -> shortcutLanguage = "BG";
+            case "chinese" -> shortcutLanguage = "CA";
+            case "czech" -> shortcutLanguage = "CS";
+            case "danish" -> shortcutLanguage = "DA";
+            case "dutch" -> shortcutLanguage = "NL";
+            case "estonian" -> shortcutLanguage = "ET";
+            case "finnish" -> shortcutLanguage = "FI";
+            case "greek" -> shortcutLanguage = "EL";
+            case "hungarian" -> shortcutLanguage = "HU";
+            case "italian" -> shortcutLanguage = "IT";
+            case "japanese" -> shortcutLanguage = "JA";
+            case "latvian" -> shortcutLanguage = "LV";
+            case "lithuanian" -> shortcutLanguage = "LT";
+            case "polish" -> shortcutLanguage = "PL";
+            case "romanian" -> shortcutLanguage = "RO";
+            case "russian" -> shortcutLanguage = "RU";
+            case "slovak" -> shortcutLanguage = "SK";
+            case "slovenian" -> shortcutLanguage = "SL";
+            case "spanish" -> shortcutLanguage = "ES";
+            case "swedish" -> shortcutLanguage = "SV";
+            case "portuguese" -> shortcutLanguage = "PT";
         }
 
         return shortcutLanguage;
