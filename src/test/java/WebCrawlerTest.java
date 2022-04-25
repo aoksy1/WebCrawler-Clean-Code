@@ -7,6 +7,7 @@ public class WebCrawlerTest {
     @Test
     public void getPageLinks() throws IOException {
         WebCrawler webCrawler = new WebCrawler("english","german");
+        System.out.println(webCrawler.crawl("https://forbes.com", 3).get(1));
         assertEquals(webCrawler.crawl("https://forbes.com", 3).get(1),"https://www.forbes.com/");
     }
 
