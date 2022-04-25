@@ -25,3 +25,5 @@ v6 --> Created Input Class that creates input object! Now user can write the web
 v7 -->
 
 [![Java CI with Maven](https://github.com/aoksy1/WebCrawler-Clean-Code/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/aoksy1/WebCrawler-Clean-Code/actions/workflows/maven.yml)
+
+[![Unit Tests](https://github.com/aoksy1/WebCrawler-Clean-Code/actions/workflows/maven.yml/badge.svg)](https://github.com/aoksy1/WebCrawler-Clean-Code/actions/workflows/maven.yml)
