@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
 
-public class WebCrawler {
+public class WebCrawler{
 
     private final HashSet<String> urlLinks;
     private final String sourceLanguage;
@@ -19,41 +19,90 @@ public class WebCrawler {
         targetLanguage = inputTargetLanguage;
     }
 
-    private int depth = 0, i = 0;
-    LinkedList<String> foundUrl = new LinkedList<>();
+    private int currentDepth = 0, indexOfUrlList = 0;
+    LinkedList<String> foundUrls = new LinkedList<>();
     LinkedList<String> foundHeadings = new LinkedList<>();
     Translator translator = new Translator();
 
     public LinkedList<String> crawl(String pageUrl, int crawlDepth) throws IOException {
-        Document htmlFile = Jsoup.connect(pageUrl).get();
-        Elements availableLinksOnPage = htmlFile.select("a[href]");
+        if(!urlLinks.contains(pageUrl) && currentDepth<crawlDepth){
+            foundUrls.add(pageUrl);
 
-        if(!urlLinks.contains(pageUrl) && depth<crawlDepth){
-            foundUrl.add(pageUrl);
-            if(i>0)foundHeadings.add("\n<br>"+arrowBuilder(depth)+" link to <a>" + foundUrl.get(i) + " </a>\n");
-            for (String heading : Arrays.asList("h1", "h2", "h3", "h4", "h5", "h6")) {
-                getHeading(foundUrl.get(i), heading);
-            }
+            addHeadingZero();
+
+            switchHeaders();
+
             urlLinks.add(pageUrl);
-            depth++; i++;
+
+            increaseCurrentDepth();
+            increaseIndexOfUrlList();
 
             outputWriter();
 
-            for (Element link : availableLinksOnPage){
-                if(depth<crawlDepth)
-                crawl(link.attr("abs:href"), crawlDepth);
-                else break;
-            }
+            getLinksFromList(pageUrl, crawlDepth);
         }
-        return foundUrl;
+        return foundUrls;
     }
 
+    private void addHeadingZero(){
+        if(indexOfUrlList>0) foundHeadings.add("\n<br>"+arrowBuilder(currentDepth)+" link to <a>" + foundUrls.get(indexOfUrlList) + " </a>\n");
+    }
+
+    private void switchHeaders() throws IOException {
+        for (String heading : Arrays.asList("h1", "h2", "h3", "h4", "h5", "h6")) {
+            getHeading(foundUrls.get(indexOfUrlList), heading);
+        }
+    }
+
+    private void increaseCurrentDepth(){
+        currentDepth++;
+    }
+
+    private void increaseIndexOfUrlList(){
+        indexOfUrlList++;
+    }
+
+    private void getLinksFromList(String url, int crawlDepth) throws IOException {
+        Elements availableLinksOnPage = getAllLinksFromHtmlFile(url);
+
+        for (Element link : availableLinksOnPage){
+            if(currentDepth<crawlDepth)
+                crawl(link.attr("abs:href"), crawlDepth);
+            else break;
+        }
+    }
+
+    private Document getHtmlFile(String url) throws IOException {
+        return Jsoup.connect(url).get();
+    }
+
+    private Elements getAllLinksFromHtmlFile(String url) throws IOException {
+        Document htmlFile = getHtmlFile(url);
+
+        return htmlFile.select("a[href]");
+    }
     public LinkedList<String> getHeading(String url, String requestedHeading) throws IOException {
-        Document htmlFile = Jsoup.connect(url).get();
-        Elements headingsOnPage = htmlFile.select(requestedHeading);
 
-        int numberOfHeading1 = 1, numberOfHeading2 = 1, numberOfHeading3 = 1, numberOfHeading4 = 1, numberOfHeading5 = 1, numberOfHeading6 = 1;
+        Elements headingsOnPage = getHeadingsFromHtmlFile(url, requestedHeading);
 
+        addHeadingsToList(headingsOnPage, requestedHeading);
+
+        return foundHeadings;
+    }
+
+    private Document createHtmlFile(String url) throws IOException {
+        return Jsoup.connect(url).get();
+    }
+
+    private Elements getHeadingsFromHtmlFile(String url, String requestedHeading) throws IOException {
+        Document htmlFile = createHtmlFile(url);
+
+        return htmlFile.select(requestedHeading);
+    }
+
+    private int numberOfHeading1 = 1, numberOfHeading2 = 1, numberOfHeading3 = 1, numberOfHeading4 = 1, numberOfHeading5 = 1, numberOfHeading6 = 1;
+
+    private void addHeadingsToList(Elements headingsOnPage, String requestedHeading) throws IOException {
         for (Element heading : headingsOnPage){
             switch (requestedHeading) {
                 case "h1" -> foundHeadings.add("# "+ headingBuilder(heading) + numberOfHeading1++);
@@ -64,25 +113,28 @@ public class WebCrawler {
                 case "h6" -> foundHeadings.add("###### " + headingBuilder(heading) + numberOfHeading1 + "." + numberOfHeading2 + "." + numberOfHeading3 + "." + numberOfHeading4 + "." + numberOfHeading5 + "." + numberOfHeading6++);
             }
         }
-        return foundHeadings;
     }
 
     private String headingBuilder(Element headingElement) throws IOException {
-        return arrowBuilder(depth) + " " + translator.translate(headingElement.text(),sourceLanguage,targetLanguage) + " ";
+        return arrowBuilder(currentDepth) + " " + translator.translate(headingElement.text(),sourceLanguage,targetLanguage) + " ";
     }
 
+
+    static Object object = new Object();
     private void outputWriter() throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("src/output/output.md"));
 
-        writer.write("input: <a>" + foundUrl.get(0) + " </a>\n");
-        writer.write("<br>depth: " + depth + "\n");
-        writer.write("<br>source language: " + sourceLanguage + "\n");
-        writer.write("<br>target language: " + targetLanguage + "\n");
-        writer.write("<br>summary: " + "\n");
-        for (String heading : foundHeadings) {
-            writer.write(heading+"\n");
+        synchronized (object) {
+            writer.write("input: <a>" + foundUrls.get(0) + " </a>\n");
+            writer.write("<br>depth: " + currentDepth + "\n");
+            writer.write("<br>source language: " + sourceLanguage + "\n");
+            writer.write("<br>target language: " + targetLanguage + "\n");
+            writer.write("<br>summary: " + "\n");
+            for (String heading : foundHeadings) {
+                writer.write(heading+"\n");
+            }
+            writer.close();
         }
-        writer.close();
     }
 
     private String arrow = "";
@@ -95,7 +147,3 @@ public class WebCrawler {
         return arrow;
     }
 }
-
-
-
-//TODO --> Fix output lines so that at crawl depth 2 output is like # ----> Something 1.1.1
