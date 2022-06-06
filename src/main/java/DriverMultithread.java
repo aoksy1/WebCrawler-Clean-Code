@@ -1,8 +1,9 @@
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class DriverMultithread extends Thread{
-
+    LinkedList<String> output = new LinkedList<>();
     @Override
     public void run(){
         Input input = new Input();
@@ -18,10 +19,20 @@ public class DriverMultithread extends Thread{
         input.setTargetLanguage(scanner.next());
 
         WebCrawler webCrawler = new WebCrawler(input.getSourceLanguage(),input.getTargetLanguage());
+
         try {
             webCrawler.crawl(input.getWebsite(),input.getDepth());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        finally {
+            output = webCrawler.getOutputCacheList();
+        }
     }
+
+    public LinkedList<String> getOutputFromThread(){
+        return output;
+    }
+
+
 }

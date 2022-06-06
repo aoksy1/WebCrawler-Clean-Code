@@ -37,7 +37,7 @@ public class WebCrawler{
             increaseCurrentDepth();
             increaseIndexOfUrlList();
 
-            outputWriter();
+            outputCacher();
 
             getLinksFromList(pageUrl, crawlDepth);
         }
@@ -119,24 +119,21 @@ public class WebCrawler{
         return arrowBuilder(currentDepth) + " " + translator.translate(headingElement.text(),sourceLanguage,targetLanguage) + " ";
     }
 
-
-    static Object object = new Object();
-    private void outputWriter() throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("src/output/output.md"));
-
-        synchronized (object) {
-            writer.write("input: <a>" + foundUrls.get(0) + " </a>\n");
-            writer.write("<br>depth: " + currentDepth + "\n");
-            writer.write("<br>source language: " + sourceLanguage + "\n");
-            writer.write("<br>target language: " + targetLanguage + "\n");
-            writer.write("<br>summary: " + "\n");
-            for (String heading : foundHeadings) {
-                writer.write(heading+"\n");
-            }
-            writer.close();
+    LinkedList<String> outputCacheList = new LinkedList<>();
+    private void outputCacher() throws IOException {
+        outputCacheList.add("input: <a>" + foundUrls.get(0) + " </a>\n");
+        outputCacheList.add("<br>depth: " + currentDepth + "\n");
+        outputCacheList.add("<br>source language: " + sourceLanguage + "\n");
+        outputCacheList.add("<br>target language: " + targetLanguage + "\n");
+        outputCacheList.add("<br>summary: " + "\n");
+        for (String heading : foundHeadings) {
+            outputCacheList.add(heading+"\n");
         }
     }
 
+    public LinkedList<String> getOutputCacheList(){
+        return outputCacheList;
+    }
     private String arrow = "";
     private String arrowBuilder(int crawlDepth){
         StringBuilder stringBuffer = new StringBuilder();

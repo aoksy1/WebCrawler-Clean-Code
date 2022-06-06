@@ -1,96 +1,240 @@
-input: <a>http://www.tmz.com </a>
+input: <a>http://www.forbes.com </a>
+
 <br>depth: 1
+
 <br>source language: english
+
 <br>target language: german
+
 <br>summary: 
-#  TMZ.com Startseite 1
-##  Rob Kardashian I Struck Deal mit Blac Chyna in Revenge Porn Case ... Jetzt versucht sie einen Rückzieher zu machen!!! 2.1
-##  Chris Evans Sei mein Date zu meiner Filmpremiere!!! VIP-Werbegeschenk für wohltätige Zwecke 2.2
-##  Boxer Simiso Buthelezi nach beängstigendem Boxzwischenfall im Koma ... Unsichtbarer Gegner im Kampf 2.3
-##  Bradley Cooper 2.4
-##  \"Tiger King\"-Star Doc Antle Anklage entsiegelt ... Angeblich 500 Millionen Dollar gewaschen 2.5
-##  Dave Chappelle spendet Eintrittskarten für die Buffalo Show an die Familien der Opfer der Massenschießerei 2.6
-##  Steve Harvey Ich sollte alle meine Trennungen auf IG machen!!! Witze über Lori 2.7
-##  Wild Video Cowboys Lasso Loose Cow ... Auf verkehrsreichem OKC Highway 2.8
-##  Johnny Depp gibt $$$ für indisches Essen aus!!! Feiert den großen Gewinn 2.9
-##  'Top Gun: Maverick\" Paramount wegen Filmrechten verklagt Diese Geschichte gehört unserer Familie!!! 2.10
-##  Amber Heard Schwester postet Nachricht der Unterstützung 2.11
-##  Benny The Butcher New Merch Gewinne gehen an die Opfer der Schießerei in Buffalo 2.12
-##  American Airlines Flugbegleiter, da ist eine Fliege in meinem Salat!!! 2.13
-##  CHRISHELL STAUSE dankt Fans für Unterstützung nach Coming Out ... während der MTV-Siegesrede 2.14
-##  Gisele filmt Tom Brady in seiner Unterhose ... 'Hey, neue Unterwäsche!!!' 2.15
-##  Prinz Harry 2.16
-##  ÜBER TMZ 2.17
+
+##  Zwei Mittzwanziger aus Uganda und Ghana waren der Meinung, dass sich mit grenzüberschreitenden Finanzdienstleistungen für die 1,2 Milliarden Menschen in Afrika ein Vermögen verdienen ließe. Mit 5 Millionen Nutzern steht das in San Francisco ansässige Unternehmen Chipper Cash erst am Anfang. 1.1
+
+##  FORBES 1.2
+
+##   1.3
+
+##  Geld 1.4
+
+##  Innovation 1.5
+
+##  Lebensstil 1.6
+
+##  Billionaires 1.7
+
+##  Leiterschaft 1.8
+
+##  Berater UK 1.9
+
+##  Konferenzen 1.10
+
+##  Newsletters 1.11
+
+##  Produkte 1.12
+
+##  Infos zum Unternehmen 1.13
+
+##  Forbes-Räte 1.14
+
+##  Bildung 1.15
+
+###  BREAKING 1.16.1
+
+###  Tägliche Titelgeschichte 1.16.2
+
+###  US-Botschafter: Wirtschaftsbeziehungen zu Russland durch Krieg in der Ukraine zerstört 1.16.3
+
+####  Leserinnen und Leser 1.16.4.1
+
+input: <a>http://www.tmz.com </a>
+
+<br>depth: 1
+
+<br>source language: english
+
+<br>target language: slovenian
+
+<br>summary: 
+
+#  TMZ.com Domov 1
+
+##  Rob Kardashian Sklenil sem dogovor z Blac Chyno v primeru maščevalne pornografije ... Zdaj se poskuša umakniti!!! 2.1
+
+##  Ryan Clark o Chrisu Brownu CB je \"bolj nadarjen\" kot Michael Jackson... Takoj je bil raztrgan 2.2
+
+##  Princ Harry 2.3
+
+##  Chris Evans Bodi moj spremljevalec na premieri mojega filma!!! VIP darilo za dobrodelne namene 2.4
+
+##  Bradley Cooper 2.5
+
+##  Odpečatena obtožnica zvezdnika filma \"Kralj tigrov\" Doca Antleja... domnevno opral 500 tisoč dolarjev 2.6
+
+##  Boksar Simiso Buthelezi v komi po grozljivem boksarskem incidentu ... Boj z nevidnim nasprotnikom 2.7
+
+##  Dave Chappelle družinam žrtev množičnega streljanja podaril prodane vstopnice za Buffalo Show 2.8
+
+##  Steve Harvey Vse svoje razhode bi moral narediti na IG!!! Šale o Lori 2.9
+
+##  Divji video kavboji Lasso Loose Cowboys ... Na prometni avtocesti v OKC 2.10
+
+##  Johnny Depp Dropping $$$ na indijski hrani!!! Praznuje veliko zmago 2.11
+
+##  \"Top Gun: Maverick' Paramount toži zaradi filmskih pravic Ta zgodba je naše družine!!! 2.12
+
+##  Amber Heard Sister Posts Sporočilo podpore 2.13
+
+##  Benny The Butcher New Merch Dobički gredo Buffalo Streljanje žrtve 2.14
+
+##  Letalec družbe American Airlines, v moji solati je muha!!! 2.15
+
+##  CHRISHELL STAUSE se zahvaljuje oboževalcem za podporo po razkritju... med zmagovalnim govorom na MTV 2.16
+
+##  O TMZ 2.17
+
 ##  KONTAKT TMZ 2.18
-##  ABONNIEREN 2.19
-##  FOLLOW 2.20
-##  TMZ APPS 2.21
-###  Zeigt 2.22.1
-###  Die App herunterladen 2.22.2
-###  Johnny Depp gibt 60.000 Dollar für ein Abendessen aus, um den Sieg über Amber zu feiern 2.22.3
-###  Shirtless Shots von Antoni Porowski ... Sehen Sie die Hot #MCM! 2.22.4
-###  Steve Harvey scherzt über die Trennung seiner Tochter von Michael B. Jordan 2.22.5
-###  Rate mal, wer dieser Fußballer geworden ist! 2.22.6
-###  Prinz Harry und Meghan verließen London vor dem Abschluss des Jubiläums 2.22.7
-###  Verwandte Artikel 2.22.8
-###  Verwandte Artikel 2.22.9
-###  Verwandte Artikel 2.22.10
-###  Verwandte Artikel 2.22.11
-###  Verwandte Artikel 2.22.12
-###  Verwandte Artikel 2.22.13
-###  Verwandte Artikel 2.22.14
-###  Verwandte Artikel 2.22.15
-###  Verwandte Artikel 2.22.16
-###  Verwandte Artikel 2.22.17
-###  Verwandte Artikel 2.22.18
-###  Verwandte Artikel 2.22.19
-###  Verwandte Artikel 2.22.20
-###  Verwandte Artikel 2.22.21
-###  Verwandte Artikel 2.22.22
-###  Alte Nachrichten sind alte Nachrichten! Sei der Erste! 2.22.23
-####  Blac Chyna beschuldigt Richter der Voreingenommenheit, Kardashian-Anwalt sagt, sie sei eine wunde Verliererin 2.22.24.1
-####  Blac Chyna Verdächtiger in Batterie Untersuchung, angeblich trat Frau in den Magen (VIDEO) 2.22.24.2
-####  Fernando Vargas will gegen Floyd Mayweather oder Oscar De La Hoya antreten 2.22.24.3
-####  Jermell Charlo lehnt einen Kampf mit Jake Paul ab, sagt aber, dass die Brüder gut für den Boxsport sind 2.22.24.4
-####  Bradley Coopers Tankstellenszene in PTAs neuem Film scheint intensiv zu sein 2.22.24.5
-####  Bradley Cooper sieht am Set des neuen Films von Paul Thomas Anderson gut aus 2.22.24.6
-####  Tiger King\"-Star Jeff Lowe 2.22.24.7
-####  Tigerkönig\" Joe Exotic wird zu 21 Jahren Haft verurteilt 2.22.24.8
-####  Waffe des Büffelschützen mit rassistischen Aufschriften übersät 2.22.24.9
-####  Buffalo-Familien erhalten riesige Spenden, Ben Crump macht sich für Klagen stark 2.22.24.10
-####  Michael B. Jordan trifft nach der Trennung von Lori Harvey das Endspiel zwischen den Celtics und den Warriors 2.22.24.11
-####  Lori Harvey wird für ihre Angaben zur Gewichtsabnahme und zum Kaloriendefizit gerügt 2.22.24.12
-####  Stier greift Radfahrer mitten im Rennen an und zerquetscht ihn 2.22.24.13
-####  PETA fordert die MLB auf, 'Bullpen' in 'Arm Barn' umzubenennen, da dies für Kühe unsensibel ist! 2.22.24.14
-####  GoFundMe schließt $1M Amber Heard Fundraiser um Johnny Depp zu bezahlen 2.22.24.15
-####  Johnny Depp zurück im Konzert und die Menge schreit: \"Unschuldig! 2.22.24.16
-####  'Top Gun: Maverick\" bricht am Memorial-Day-Wochenende Kassenrekorde 2.22.24.17
-####  Top Gun\"-Star Miles Teller wirft perfekten Strike während des ersten Pitch beim Phillies-Spiel 2.22.24.18
-####  Kathy Griffin nennt Johnny Depp 'aufgeblasenen Saufsack', verteidigt Amber 2.22.24.19
-####  Johnny Depp nach Konzert in England von Fans belästigt 2.22.24.20
-####  Benny The Butcher veröffentlicht neues Bills Mafia Musikvideo mit Spielern, \"Es war verrückt! 2.22.24.21
-####  Rapper Benny the Butcher wieder auf den Beinen, nachdem er in Houston angeschossen wurde 2.22.24.22
-####  Frau, die behauptet, Alaska Airlines Fett beschämt sie verliert 200 Pfund nach der Operation 2.22.24.23
-####  Große Brüste der Frau haben sie nicht aus dem Flugzeug geworfen, Quellen der Fluggesellschaft 2.22.24.24
-####  Chrishell Stause scherzt über die Adoption einer \"erwachsenen lesbischen Tochter\" von Facebook 2.22.24.25
-####  Chrishell Stause erhält unaufgefordert ein Nacktfoto von einem Mann und schickt es an seine Mutter 2.22.24.26
-####  Tom Brady zeigt seinen hemdlosen Körper in der Werbung einer Bekleidungsmarke 2.22.24.27
-####  Tom Brady zeigt Arme in Flexing Durstfalle Pic am Set des neuen Films 2.22.24.28
-####  Elton John, Diana Ross und Alicia Keys treten beim Jubiläumskonzert der Queen auf 2.22.24.29
-####  Prinz Louis macht viele dumme Gesichter während des Platin-Jubiläumsfestes 2.22.24.30
-#####  Exklusive 123 Anteile 6/6/2022 2:49 PM PT 2.22.24.31.1
-#####  Exklusiv 16 Anteile 6/6/2022 3:01 PM PT 2.22.24.31.2
-#####  761 Anteile 6/6/2022 2:30 PM PT 2.22.24.31.3
-#####  Exklusive Details 175 Aktien 6/6/2022 12:44 PM PT 2.22.24.31.4
-#####  886 Anteile 6/6/2022 7:36 AM PT 2.22.24.31.5
-#####  789 Anteile 6/6/2022 12:09 PM PT 2.22.24.31.6
-#####  331 Anteile 6/6/2022 10:47 AM PT 2.22.24.31.7
-#####  312 Anteile 6/6/2022 10:58 AM PT 2.22.24.31.8
-#####  30,1K Aktien 6/6/2022 10:24 AM PT 2.22.24.31.9
-#####  1K Anteile 6/6/2022 9:47 AM PT 2.22.24.31.10
-#####  6.7K Aktien 6/6/2022 6:58 AM PT 2.22.24.31.11
-#####  Exklusive 233 Aktien 6/6/2022 9:09 AM PT 2.22.24.31.12
-#####  Exklusive Details 1.1K Aktien 6/6/2022 7:22 AM PT 2.22.24.31.13
-#####  679 Anteile 6/6/2022 7:17 AM PT 2.22.24.31.14
-#####  353 Anteile 6/6/2022 7:08 AM PT 2.22.24.31.15
-#####  7,2K Aktien 6/6/2022 6:43 AM PT 2.22.24.31.16
+
+##  PODPISUJTE SE NA 2.19
+
+##  SLEDITE 2.20
+
+##  APLIKACIJE TMZ APPS 2.21
+
+###  Prikazuje 2.22.1
+
+###  Prenos aplikacije 2.22.2
+
+###  Bradley Cooper na snemanju filma o Leonardu Bernsteinu poljublja Matta Bomerja 2.22.3
+
+###  Posnetki Antonija Porowskega brez srajce ... Oglejte si vroče #MCM! 2.22.4
+
+###  Princ Harry in Meghan odletela iz Londona pred jubilejnim zaprtjem 2.22.5
+
+###  Ugani, v koga se je spremenil ta nogometaš! 2.22.6
+
+###  Johnny Depp porabil 60 tisoč dolarjev za večerjo, da bi proslavil zmago nad Amber 2.22.7
+
+###  Sorodni članki 2.22.8
+
+###  Sorodni članki 2.22.9
+
+###  Sorodni članki 2.22.10
+
+###  Sorodni članki 2.22.11
+
+###  Sorodni članki 2.22.12
+
+###  Sorodni članki 2.22.13
+
+###  Sorodni članki 2.22.14
+
+###  Sorodni članki 2.22.15
+
+###  Sorodni članki 2.22.16
+
+###  Sorodni članki 2.22.17
+
+###  Sorodni članki 2.22.18
+
+###  Sorodni članki 2.22.19
+
+###  Sorodni članki 2.22.20
+
+###  Sorodni članki 2.22.21
+
+###  Sorodni članki 2.22.22
+
+###  Stare novice so stare novice! Bodi prvi! 2.22.23
+
+####  Blac Chyna obtožuje sodnika pristranskosti, Kardashianov odvetnik pravi, da je žalostna poraženka 2.22.24.1
+
+####  Blac Chyna osumljenka v preiskavi pretepa, domnevno je žensko brcnila v trebuh (VIDEO) 2.22.24.2
+
+####  Elton John, Diana Ross in Alicia Keys nastopili na kraljičinem jubilejnem koncertu 2.22.24.3
+
+####  Platinasti jubilej kraljice Elizabete se je začel, pridružila sta se mu tudi princ Harry in Meghan Markle 2.22.24.4
+
+####  Uvrstitev Chrisa Evansa v film Svetlobno leto ni bila Disneyjevo nasprotovanje političnim prepričanjem Tima Allena 2.22.24.5
+
+####  Chris Evans s spretnostmi igranja klavirja utrdi status srčnega izbranca 2.22.24.6
+
+####  Scena na bencinski črpalki Bradleyja Cooperja v novem filmu PTA se zdi intenzivna 2.22.24.7
+
+####  Bradley Cooper na snemanju novega filma Paula Thomasa Andersona izgleda odlično 2.22.24.8
+
+####  Zvezdnik filma Kralj tigrov Jeff Lowe 2.22.24.9
+
+####  \"Kralj tigrov\" Joe Exotic ponovno obsojen na 21 let zapora 2.22.24.10
+
+####  Fernando Vargas se bo na razstavi boril s Floydom Mayweatherjem ali Oscarjem De La Hoyo 2.22.24.11
+
+####  Jermell Charlo zavrnil boj z Jakeom Paulom, a pravi, da sta brata dobra za boks 2.22.24.12
+
+####  Strelčeva pištola v Buffalu je bila polna rasističnih napisov 2.22.24.13
+
+####  Družine iz Buffala bodo prejele ogromne donacije, Ben Crump se pripravlja na tožbe 2.22.24.14
+
+####  Michael B. Jordan po razhodu z Lori Harvey obiskal finale Celtics-Warriors 2.22.24.15
+
+####  Lori Harvey se je zgražala nad podrobnostmi o režimu hujšanja in pomanjkanju kalorij 2.22.24.16
+
+####  Bik napadel in zdrobil kolesarja sredi dirke 2.22.24.17
+
+####  PETA poziva MLB, naj \"Bullpen\" preimenuje v \"Arm Barn\", saj je to neobčutljivo za krave! 2.22.24.18
+
+####  GoFundMe ustavil zbiranje sredstev za Amber Heard v višini 1 milijona dolarjev za pomoč pri plačilu Johnnyju Deppu 2.22.24.19
+
+####  Johnny Depp ponovno na koncertu, ko množica kriči: \"Nedolžen! 2.22.24.20
+
+####  \"Top Gun: Maverick\" ruši rekorde blagajne ob dnevu spomina na mrtve. 2.22.24.21
+
+####  'Top Gun' Star Miles Teller vrže Perfect Strike Med 1st Pitch Na Phillies igre 2.22.24.22
+
+####  Kathy Griffin Johnnyja Deppa označila za \"napihnjeno vrečo alkohola\" in branila Amber 2.22.24.23
+
+####  Johnnyja Deppa po koncertu v Angliji napadli oboževalci 2.22.24.24
+
+####  Benny The Butcher Dropping New Bills Mafia Music Video W/ Players, \"Bilo je noro! 2.22.24.25
+
+####  Raper Benny the Butcher po streljanju v Houstonu spet na nogah 2.22.24.26
+
+####  Ženska, ki je trdila, da jo je družba Alaska Airlines osramotila zaradi maščobe, je po operaciji izgubila 200 kilogramov 2.22.24.27
+
+####  Zaradi velikih prsi ženske je niso vrgli z letala, viri letalske družbe 2.22.24.28
+
+####  Chrishell Stause se šali o sprejemu \"odrasle lezbične hčerke\" s Facebooka 2.22.24.29
+
+####  Chrishell Stause dobi nezaželeno golo sliko od fanta in jo pošlje svoji mami 2.22.24.30
+
+#####  Ekskluzivno 346 delnic 6/6/2022 14:49 PM PT 2.22.24.31.1
+
+#####  45 delnic 6/6/2022 15:30 PM PT 2.22.24.31.2
+
+#####  3,1 tisoč delnic 6/6/2022 15:35 PM PT 2.22.24.31.3
+
+#####  Ekskluzivno 131 delnic 6/6/2022 3:01 PM PT 2.22.24.31.4
+
+#####  1,2 tisoč delnic 6/6/2022 14:30 PM PT 2.22.24.31.5
+
+#####  Ekskluzivne podrobnosti 187 delnic 6/6/2022 12:44 PM PT 2.22.24.31.6
+
+#####  2,2 tisoč delnic 6/6/2022 7:36 AM PT 2.22.24.31.7
+
+#####  858 delnic 6/6/2022 12:09 PM PT 2.22.24.31.8
+
+#####  367 delnic 6/6/2022 10:47 AM PT 2.22.24.31.9
+
+#####  379 delnic 6/6/2022 10:58 AM PT 2.22.24.31.10
+
+#####  33,2 tisoč delnic 6/6/2022 10:24 AM PT 2.22.24.31.11
+
+#####  1K delnic 6/6/2022 9:47 AM PT 2.22.24.31.12
+
+#####  6,9K delnic 6/6/2022 6:58 AM PT 2.22.24.31.13
+
+#####  Ekskluzivno 244 delnic 6/6/2022 9:09 AM PT 2.22.24.31.14
+
+#####  Ekskluzivne podrobnosti 1.1K delnic 6/6/2022 7:22 AM PT 2.22.24.31.15
+
+#####  734 delnic 6/6/2022 7:17 AM PT 2.22.24.31.16
+
