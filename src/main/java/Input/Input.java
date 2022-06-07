@@ -11,7 +11,7 @@ public class Input {
     }
 
     public void setWebsite(String website) {
-        this.website = "http://" + website;
+        this.website = "https://" + website;
     }
 
     public int getDepth() {

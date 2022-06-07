@@ -34,17 +34,18 @@ public class Translator {
         Process translate = translationProcess(textToTranslate, sourceLanguage, targetLanguage);
 
             String translated = IOUtils.toString(translate.getInputStream());
-            if(translated.length()>45)translated = translated.substring(58,translated.length()-4); //Getting output from JSON return
+            if(translated.length()>45) translated = translated.substring(58,translated.length()-4); //Getting output from JSON return
             return translated;
         }
         catch (Exception e){
+            e.printStackTrace();
             return null;
         }
     }
 
     public String getShortLanguage(String language){
         String shortcutLanguage = "";
-        language=language.toLowerCase(Locale.ROOT);
+        language = language.toLowerCase();
 
         switch (language) {
             case "english" -> shortcutLanguage = "EN";
@@ -72,7 +73,7 @@ public class Translator {
             case "swedish" -> shortcutLanguage = "SV";
             case "portuguese" -> shortcutLanguage = "PT";
             default -> {
-                System.out.println("Wrong input in Language Selection. Deafulting to English");
+                System.out.println("Wrong input in Language Selection. Setting language to English");
                 shortcutLanguage = "EN";
             }
         }

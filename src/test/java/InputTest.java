@@ -14,27 +14,27 @@ public class InputTest {
     public void setAndGetInputWebsite(){
         input.setWebsite(website);
 
-        assertEquals(input.getWebsite(),"http://aau.at");
+        assertEquals("https://aau.at", input.getWebsite());
     }
 
     @Test
     public void setAndGetInputDepth(){
         input.setDepth(3);
 
-        assertEquals(input.getDepth(),depth);
+        assertEquals(depth, input.getDepth());
     }
 
     @Test
     public void setAndGetInputSourceLanguage(){
         input.setSourceLanguage(sourceLanguage);
 
-        assertEquals(input.getSourceLanguage(),sourceLanguage);
+        assertEquals(sourceLanguage, input.getSourceLanguage());
     }
 
     @Test
     public void setAndGetInputTargetLanguage(){
         input.setTargetLanguage(targetLanguage);
 
-        assertEquals(input.getTargetLanguage(),targetLanguage);
+        assertEquals(targetLanguage, input.getTargetLanguage());
     }
 }

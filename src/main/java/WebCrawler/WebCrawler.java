@@ -1,6 +1,6 @@
 package WebCrawler;
 
-import TranslatorAPI.Translator;
+import TranslatorAPI.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -35,35 +35,11 @@ public class WebCrawler{
             increaseCurrentDepth();
             increaseIndexOfUrlList();
 
-            outputCacher();
+            outputCache();
 
             getLinksFromList(pageUrl, crawlDepth);
         }
         return foundUrls;
-    }
-
-    private void switchThroughHeaders(){
-        for (String heading : Arrays.asList("h1", "h2", "h3", "h4", "h5", "h6")) {
-            getHeading(foundUrls.get(indexOfUrlList), heading);
-        }
-    }
-
-    private void increaseCurrentDepth(){
-        currentDepth++;
-    }
-
-    private void increaseIndexOfUrlList(){
-        indexOfUrlList++;
-    }
-
-    private void getLinksFromList(String url, int crawlDepth)  {
-        Elements availableLinksOnPage = getAllLinksFromHtmlFile(url);
-
-        for (Element link : availableLinksOnPage){
-            if(currentDepth<crawlDepth)
-                crawl(link.attr("abs:href"), crawlDepth);
-            else break;
-        }
     }
 
     private Document createHtmlFile(String url) {
@@ -79,13 +55,31 @@ public class WebCrawler{
     private Elements getAllLinksFromHtmlFile(String url) {
         Document htmlFile = createHtmlFile(url);
 
+        assert htmlFile != null;
         return htmlFile.select("a[href]");
+    }
+
+    private void getLinksFromList(String url, int crawlDepth)  {
+        Elements availableLinksOnPage = getAllLinksFromHtmlFile(url);
+
+        for (Element link : availableLinksOnPage){
+            if(currentDepth<crawlDepth)
+                crawl(link.attr("abs:href"), crawlDepth);
+            else break;
+        }
+    }
+
+    private void increaseCurrentDepth(){
+        currentDepth++;
+    }
+
+    private void increaseIndexOfUrlList(){
+        indexOfUrlList++;
     }
 
     private final LinkedList<String> foundHeadings = new LinkedList<>();
 
     public LinkedList<String> getHeading(String url, String requestedHeading) {
-
         Elements headingsOnPage = getHeadingsFromHtmlFile(url, requestedHeading);
 
         addHeadingsToList(headingsOnPage, requestedHeading);
@@ -96,6 +90,7 @@ public class WebCrawler{
     private Elements getHeadingsFromHtmlFile(String url, String requestedHeading)  {
         Document htmlFile = createHtmlFile(url);
 
+        assert htmlFile != null;
         return htmlFile.select(requestedHeading);
     }
 
@@ -120,9 +115,15 @@ public class WebCrawler{
         return arrowBuilder(currentDepth) + " " + translator.translate(headingElement.text(),sourceLanguage,targetLanguage) + " ";
     }
 
+    private void switchThroughHeaders(){
+        for (String heading : Arrays.asList("h1", "h2", "h3", "h4", "h5", "h6")) {
+            getHeading(foundUrls.get(indexOfUrlList), heading);
+        }
+    }
+
     LinkedList<String> outputCacheList = new LinkedList<>();
 
-    private void outputCacher(){
+    private void outputCache(){
         outputCacheList.add("input: <a>" + foundUrls.get(0) + " </a>\n");
         outputCacheList.add("<br>depth: " + currentDepth + "\n");
         outputCacheList.add("<br>source language: " + sourceLanguage + "\n");

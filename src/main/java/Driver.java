@@ -1,12 +1,12 @@
-import Multithreading.DriverMultithread;
+import Multithreading.MultithreadedWebCrawler;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
 public class Driver{
     public static void main(String[] args) throws Exception {
-        DriverMultithread firstThread = new DriverMultithread();
-        DriverMultithread secondThread = new DriverMultithread();
+        MultithreadedWebCrawler firstThread = new MultithreadedWebCrawler();
+        MultithreadedWebCrawler secondThread = new MultithreadedWebCrawler();
         BufferedWriter writer = new BufferedWriter(new FileWriter("src/output/output.md"));
 
         firstThread.start();

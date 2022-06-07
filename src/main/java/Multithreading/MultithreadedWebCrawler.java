@@ -1,36 +1,34 @@
 package Multithreading;
 
+import Input.Input;
+import WebCrawler.WebCrawler;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import Input.Input;
-import WebCrawler.WebCrawler;
-
-
-public class DriverMultithread extends Thread{
+public class MultithreadedWebCrawler extends Thread{
     LinkedList<String> output = new LinkedList<>();
     WebCrawler webCrawler;
+
     @Override
     public void run(){
-
         getInput();
-
         webCrawler = new WebCrawler(input.getSourceLanguage(),input.getTargetLanguage());
 
         try {
             webCrawler.crawl(input.getWebsite(),input.getDepth());
         } catch (Exception e) {
-
+            System.out.println("Cannot crawl on given website!");
         }
         finally {
-
             output = webCrawler.getOutputCacheList();
         }
     }
-    Input input;
+
+    private final Scanner scanner = new Scanner(System.in);
     final static Object syncObject = new Object();
-    public void getInput(){
-        Scanner scanner = new Scanner(System.in);
+    private Input input;
+
+    private void getInput(){
         input=new Input();
         synchronized (syncObject){
            try{
@@ -48,13 +46,10 @@ public class DriverMultithread extends Thread{
                System.out.println("Please double-check your input and try again");
                getInput();
            }
-
         }
-
     }
 
     public LinkedList<String> getOutputFromThread(){
         return output;
     }
-
 }

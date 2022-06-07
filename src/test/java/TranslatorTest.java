@@ -13,8 +13,8 @@ class TranslatorTest {
         String testValue1 = "Hello World!";
         String testValue2 = "Das ist ein Test!";
 
-        assertEquals("Hallo Welt!", translator.translate(testValue1,"english","german"));
-        assertEquals(translator.translate(testValue2,"german","english"),"This is a test!");
+        assertEquals(translator.translate(testValue1,"english","german"),"Hallo Welt!");
+        assertEquals("This is a test!",translator.translate(testValue2,"german","english"));
     }
 
     @Test
@@ -22,6 +22,6 @@ class TranslatorTest {
         Translator translator = new Translator();
         String sampleInputLanguage = "english";
 
-        assertEquals(translator.getShortLanguage(sampleInputLanguage),"EN");
+        assertEquals("EN",translator.getShortLanguage(sampleInputLanguage));
     }
 }

@@ -1,18 +1,17 @@
 import WebCrawler.WebCrawler;
 import org.junit.jupiter.api.Test;
-import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class WebCrawlerTest {
     @Test
-    public void getPageLinks() throws IOException {
+    public void getPageLinks(){
         WebCrawler webCrawler = new WebCrawler("english","german");
-        assertEquals(webCrawler.crawl("https://forbes.com", 3).get(1),"https://www.forbes.com/");
+        assertEquals("https://www.forbes.com/",webCrawler.crawl("https://forbes.com", 3).get(1));
     }
 
     @Test
-    public void getPageHeadings() throws IOException {
+    public void getPageHeadings(){
         WebCrawler webCrawler = new WebCrawler("english","german");
-        assertEquals(webCrawler.getHeading("https://forbes.com","h3").get(0),"###  BREAKING 1.1.1");
+        assertEquals("###  BREAKING 1.1.1",webCrawler.getHeading("https://forbes.com","h3").get(0));
     }
 }
