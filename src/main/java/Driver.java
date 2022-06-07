@@ -8,7 +8,6 @@ public class Driver{
 
         firstThread.start();
         secondThread.start();
-
         firstThread.join();
         secondThread.join();
 

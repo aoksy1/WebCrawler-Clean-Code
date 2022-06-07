@@ -2,7 +2,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import java.io.*;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -12,6 +11,12 @@ public class WebCrawler{
     private final HashSet<String> urlLinks;
     private final String sourceLanguage;
     private final String targetLanguage;
+    private int currentDepth = 0, indexOfUrlList = 0;
+
+    LinkedList<String> foundUrls = new LinkedList<>();
+    LinkedList<String> foundHeadings = new LinkedList<>();
+    Translator translator = new Translator();
+
 
     public WebCrawler(String inputSourceLanguage, String inputTargetLanguage){
         urlLinks = new HashSet<>();
@@ -19,12 +24,7 @@ public class WebCrawler{
         targetLanguage = inputTargetLanguage;
     }
 
-    private int currentDepth = 0, indexOfUrlList = 0;
-    LinkedList<String> foundUrls = new LinkedList<>();
-    LinkedList<String> foundHeadings = new LinkedList<>();
-    Translator translator = new Translator();
-
-    public LinkedList<String> crawl(String pageUrl, int crawlDepth) throws IOException {
+    public LinkedList<String> crawl(String pageUrl, int crawlDepth){
         if(!urlLinks.contains(pageUrl) && currentDepth<crawlDepth){
             foundUrls.add(pageUrl);
 
@@ -48,7 +48,7 @@ public class WebCrawler{
         if(indexOfUrlList>0) foundHeadings.add("\n<br>"+arrowBuilder(currentDepth)+" link to <a>" + foundUrls.get(indexOfUrlList) + " </a>\n");
     }
 
-    private void switchHeaders() throws IOException {
+    private void switchHeaders(){
         for (String heading : Arrays.asList("h1", "h2", "h3", "h4", "h5", "h6")) {
             getHeading(foundUrls.get(indexOfUrlList), heading);
         }
@@ -62,7 +62,7 @@ public class WebCrawler{
         indexOfUrlList++;
     }
 
-    private void getLinksFromList(String url, int crawlDepth) throws IOException {
+    private void getLinksFromList(String url, int crawlDepth)  {
         Elements availableLinksOnPage = getAllLinksFromHtmlFile(url);
 
         for (Element link : availableLinksOnPage){
@@ -72,16 +72,22 @@ public class WebCrawler{
         }
     }
 
-    private Document getHtmlFile(String url) throws IOException {
-        return Jsoup.connect(url).get();
+    private Document getHtmlFile(String url) {
+        try {
+            return Jsoup.connect(url).get();
+        }
+        catch (Exception e){
+            System.out.println("Please check the URL");
+            return null;
+        }
     }
 
-    private Elements getAllLinksFromHtmlFile(String url) throws IOException {
+    private Elements getAllLinksFromHtmlFile(String url) {
         Document htmlFile = getHtmlFile(url);
 
         return htmlFile.select("a[href]");
     }
-    public LinkedList<String> getHeading(String url, String requestedHeading) throws IOException {
+    public LinkedList<String> getHeading(String url, String requestedHeading) {
 
         Elements headingsOnPage = getHeadingsFromHtmlFile(url, requestedHeading);
 
@@ -90,11 +96,17 @@ public class WebCrawler{
         return foundHeadings;
     }
 
-    private Document createHtmlFile(String url) throws IOException {
-        return Jsoup.connect(url).get();
+    private Document createHtmlFile(String url)  {
+        try{
+            return Jsoup.connect(url).get();
+        }
+        catch (Exception e){
+            System.out.println("URL Error. Please double-check the input");
+            return null;
+        }
     }
 
-    private Elements getHeadingsFromHtmlFile(String url, String requestedHeading) throws IOException {
+    private Elements getHeadingsFromHtmlFile(String url, String requestedHeading)  {
         Document htmlFile = createHtmlFile(url);
 
         return htmlFile.select(requestedHeading);
@@ -102,7 +114,7 @@ public class WebCrawler{
 
     private int numberOfHeading1 = 1, numberOfHeading2 = 1, numberOfHeading3 = 1, numberOfHeading4 = 1, numberOfHeading5 = 1, numberOfHeading6 = 1;
 
-    private void addHeadingsToList(Elements headingsOnPage, String requestedHeading) throws IOException {
+    private void addHeadingsToList(Elements headingsOnPage, String requestedHeading) {
         for (Element heading : headingsOnPage){
             switch (requestedHeading) {
                 case "h1" -> foundHeadings.add("# "+ headingBuilder(heading) + numberOfHeading1++);
@@ -115,12 +127,12 @@ public class WebCrawler{
         }
     }
 
-    private String headingBuilder(Element headingElement) throws IOException {
+    private String headingBuilder(Element headingElement)  {
         return arrowBuilder(currentDepth) + " " + translator.translate(headingElement.text(),sourceLanguage,targetLanguage) + " ";
     }
 
     LinkedList<String> outputCacheList = new LinkedList<>();
-    private void outputCacher() throws IOException {
+    private void outputCacher(){
         outputCacheList.add("input: <a>" + foundUrls.get(0) + " </a>\n");
         outputCacheList.add("<br>depth: " + currentDepth + "\n");
         outputCacheList.add("<br>source language: " + sourceLanguage + "\n");

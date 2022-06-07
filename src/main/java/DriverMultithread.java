@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -14,10 +13,11 @@ public class DriverMultithread extends Thread{
 
         try {
             webCrawler.crawl(input.getWebsite(),input.getDepth());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+
         }
         finally {
+
             output = webCrawler.getOutputCacheList();
         }
     }
@@ -27,14 +27,22 @@ public class DriverMultithread extends Thread{
         Scanner scanner = new Scanner(System.in);
         input=new Input();
         synchronized (syncObject){
-            System.out.println("Enter the website URL :");
-            input.setWebsite(scanner.next());
-            System.out.println("Enter the depth to crawl to :");
-            input.setDepth(scanner.nextInt());
-            System.out.println("What is the source language of the website :");
-            input.setSourceLanguage(scanner.next());
-            System.out.println("To which language do you wish to translate :");
-            input.setTargetLanguage(scanner.next());
+           try{
+               System.out.println("Enter the website URL :");
+               input.setWebsite(scanner.next());
+               System.out.println("Enter the depth to crawl to :");
+               input.setDepth(scanner.nextInt());
+               System.out.println("What is the source language of the website :");
+               input.setSourceLanguage(scanner.next());
+               System.out.println("To which language do you wish to translate :");
+               input.setTargetLanguage(scanner.next());
+               System.out.println();
+           }
+           catch (Exception e){
+               System.out.println("Please double-check your input and try again");
+               getInput();
+           }
+
         }
 
     }
