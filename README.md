@@ -52,4 +52,5 @@ v11 --> Fine tuning and all bugs are fixed!
 Allows the user to crawl and translate two websites simultaneously, by running the code on two threads.
 Implemented error handling as to avoid crashes on simple input issues.
 
-User should run the main method and follow the instructions in the console to succesfuly use the programm
+User should run the main method in the Driver class and follow the instructions in the console to succesfuly use the programm.
+Testing should be done the same way as in previous versions.
