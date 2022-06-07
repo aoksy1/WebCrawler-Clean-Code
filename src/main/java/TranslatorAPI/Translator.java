@@ -1,3 +1,5 @@
+package TranslatorAPI;
+
 import org.apache.commons.io.IOUtils;
 
 import java.util.Locale;

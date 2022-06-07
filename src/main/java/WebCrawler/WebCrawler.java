@@ -1,3 +1,6 @@
+package WebCrawler;
+
+import TranslatorAPI.Translator;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -17,7 +20,6 @@ public class WebCrawler{
     LinkedList<String> foundHeadings = new LinkedList<>();
     Translator translator = new Translator();
 
-
     public WebCrawler(String inputSourceLanguage, String inputTargetLanguage){
         urlLinks = new HashSet<>();
         sourceLanguage = inputSourceLanguage;
@@ -27,8 +29,6 @@ public class WebCrawler{
     public LinkedList<String> crawl(String pageUrl, int crawlDepth){
         if(!urlLinks.contains(pageUrl) && currentDepth<crawlDepth){
             foundUrls.add(pageUrl);
-
-            addHeadingZero();
 
             switchHeaders();
 
@@ -42,10 +42,6 @@ public class WebCrawler{
             getLinksFromList(pageUrl, crawlDepth);
         }
         return foundUrls;
-    }
-
-    private void addHeadingZero(){
-        if(indexOfUrlList>0) foundHeadings.add("\n<br>"+arrowBuilder(currentDepth)+" link to <a>" + foundUrls.get(indexOfUrlList) + " </a>\n");
     }
 
     private void switchHeaders(){

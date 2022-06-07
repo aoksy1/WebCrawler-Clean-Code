@@ -1,3 +1,5 @@
+package Multithreading;
+
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -50,6 +52,5 @@ public class DriverMultithread extends Thread{
     public LinkedList<String> getOutputFromThread(){
         return output;
     }
-
 
 }

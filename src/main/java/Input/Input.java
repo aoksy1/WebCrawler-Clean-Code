@@ -1,3 +1,5 @@
+package Input;
+
 public class Input {
     private String website;
     private int depth;

@@ -1,4 +1,4 @@
-# WebCrawler Clean Code
+# WebCrawler.WebCrawler Clean Code
  Assignment 1 from Clean Code --> Simple web crawler
 
 v1 -->  We created simple web crawler that crawls to a specific depth and gives us links of crawled web pages!
@@ -12,7 +12,7 @@ We created a method to convert given input for an example "english" to "EN" beca
 
 We tested all of our methods and got 100% from class and methods, but from lines only 90%!
 
-v4 --> Translator class connected and trying to get Output.md file to save our output to!
+v4 --> TranslatorAPI.Translator class connected and trying to get Output.md file to save our output to!
 
 v5 --> Connected all classes successfully and got the program to save output.md file with all of our headings and links!
 
@@ -20,7 +20,7 @@ Created arrow builder method that creates an arrow specific for each depth of cr
 
 Created headingBulder method that creates a given form of heading!
 
-v6 --> Created Input Class that creates input object! Now user can write the website, depth, source language and target language.
+v6 --> Created Input.Input Class that creates input object! Now user can write the website, depth, source language and target language.
 
 v7 --> Tested input class. There is only crawler class left to test.
 
