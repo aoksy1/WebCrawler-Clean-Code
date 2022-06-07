@@ -10,9 +10,13 @@
         <module name="WebCrawler-Clean-Code" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="WebCrawler-Clean-Code" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="WebCrawler" options="--add-modules java.base" />
       <module name="WebCrawler-Clean-Code" options="--add-modules java.base" />
     </option>
   </component>

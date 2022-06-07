@@ -1,14 +1,14 @@
 import TranslatorAPI.Translator;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class TranslatorTest {
 
     @Test
-    public void getTextTranslated() throws IOException {
+    public void getTextTranslated(){
         Translator translator = new Translator();
         String testValue1 = "Hello World!";
         String testValue2 = "Das ist ein Test!";
