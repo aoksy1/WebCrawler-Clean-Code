@@ -44,3 +44,12 @@ v11 --> Fine tuning and all bugs are fixed!
       To view the translations please open the output.md file in src/output path
 
 -You can test the project by running the Test classes that are in the "tests/java" directory, or by checking the workflow run in the GitHub actions, under the "Build    with Maven" job.
+
+
+
+#RELEASE 2 
+
+Allows the user to crawl and translate two websites simultaneously, by running the code on two threads.
+Implemented error handling as to avoid crashes on simple input issues.
+
+User should run the main method and follow the instructions in the console to succesfuly use the programm
