@@ -3,6 +3,10 @@ package Multithreading;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+import Input.Input;
+import WebCrawler.WebCrawler;
+
+
 public class DriverMultithread extends Thread{
     LinkedList<String> output = new LinkedList<>();
     WebCrawler webCrawler;
